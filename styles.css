@@ -1,0 +1,262 @@
+/* Import Font from google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  --clr-red: hsl(0, 100%, 74%);
+  --clr-green: hsl(154, 59%, 51%);
+  --clr-blue: hsl(248, 32%, 49%);
+  --clr-dark-blue: hsl(249, 10%, 26%);
+  --clr-grayish-blue: hsl(246, 25%, 77%);
+
+  --box-shadow: 0px 6px 2px 0px rgba(62, 60, 73, 0.3);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  width: 100%;
+  min-height: 100vh;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("images/bg-intro-desktop.png"), var(--clr-red);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 77%;
+  gap: 2em;
+}
+
+/* Left Column Start */
+.left-col {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.heading {
+  font-size: 5rem;
+  line-height: 1.2;
+  margin-bottom: 0.5em;
+}
+
+.subheading {
+  line-height: 1.7;
+}
+
+/* ******************************************************************** */
+
+/* Right Column start */
+.right-col {
+  flex-basis: 50%;
+  
+}
+
+.headline {
+  text-align: center;
+  background-color: var(--clr-blue);
+  border-radius: 10px;
+  padding: 1.5em 0;
+  font-size: 1.3rem;
+  margin-bottom: 1.5em;
+  box-shadow: var(--box-shadow);
+}
+
+.headline span {
+  font-weight: 400;
+}
+
+.form {
+  background-color: #fff;
+  border-radius: 7px;
+  padding: 2.5em;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--box-shadow);
+}
+
+.input-container {
+  border: 1px solid var(--clr-grayish-blue);
+  border-radius: 7px;
+  margin-bottom: 1.5em;
+  position: relative;
+}
+
+.input-container.error {
+  border:2px solid var(--clr-red);
+  margin-top: 1em;
+}
+
+.input-container input {
+  border: 0;
+  display: block;
+  width: 100%;
+  outline: none;
+  background: none;
+  padding: 1.5em 2em;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--clr-dark-blue);
+  text-align: left;
+}
+
+.input-container img {
+ visibility: hidden;
+  position: absolute;
+  right: 20px;
+  top: 14px;
+}
+
+.input-container.error img {
+  visibility: visible;
+}
+
+.input-container small {
+ visibility: hidden;
+  color: var(--clr-red);
+  font-style: italic;
+  position: absolute;
+  right: 0;
+  bottom: -25px;
+  font-size: 1.1rem;
+}
+
+.input-container.error small {
+  visibility: visible;
+}
+
+.btn {
+  padding: 1em 0;
+  margin-bottom: 1em;
+  font-weight: 600;
+  outline: none;
+  border: 0;
+  border-radius: 7px;
+  background-color: var(--clr-green);
+  box-shadow: 0px 3px 2px 0px rgba(28, 109, 74, 0.7);
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s ease all;
+}
+
+.btn:hover {
+  background-color: hsl(154, 59%, 65%);
+}
+
+.input-container.error + .btn {
+  margin-top: 1em;
+}
+
+.footer {
+  color: var(--clr-grayish-blue);
+  font-size: 1rem;
+}
+
+.footer span {
+  font-weight: 600;
+  color: var(--clr-red);
+}
+
+/* ******************************************************************** */
+
+/* Media Query */
+@media screen and (max-width: 500px) {
+  body {
+    font-size: 1.3rem;
+  }
+
+  main {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    gap: 4em;
+    
+  }
+
+  .left-col {
+    align-items: center;
+    padding: 5em 3em 0;
+    flex-basis: 100%;
+  }
+
+  .heading {
+    font-size: 3rem;
+    margin-bottom: 1em;
+  }
+
+  .subheading {
+    width: 32ch;
+  }
+
+  .right-col {
+    flex-basis: 100%;
+    margin-bottom: 5em;
+   
+  }
+
+  .headline {
+    padding: 1em 0;
+    width: 100%;
+  }
+
+  .headline h3 {
+    font-size: 1rem;
+    max-width: 20ch;
+    line-height: 1.5;
+    margin: 0 auto;
+  }
+
+  .form {
+    padding: 1.5em;
+  }
+
+  /* .input-container {
+    margin-bottom: 1em;
+  }
+  .input-container.error {
+    margin-top: 0;
+  } */
+
+  .input-container input {
+    font-size: 1rem;
+  }
+
+  .input-container img {
+    top: 11px;
+    width: 20px;
+  }
+
+  .input-container small {
+    font-size: 1rem;
+    bottom: -20px;
+  }
+
+  
+
+  .btn {
+    font-size: 1rem;
+  }
+
+  .footer {
+    font-size: .9rem;
+  }
+}
